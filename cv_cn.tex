@@ -1,0 +1,110 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xeCJK}
+\setmainfont{SimHei}
+\setsansfont{SimHei}
+\setmonofont{SimHei}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{SimHei}
+
+\setCJKfamilyfont{zhhei}{SimHei}
+\newcommand*{\heiti}{\CJKfamily{zhhei}} % 黑体
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% 设置超链接字体颜色
+\AtBeginDocument{
+    \hypersetup{colorlinks,urlcolor=blue}
+}
+
+% personal data
+\name{张}{杰}
+\title{个人简历}
+\address{成都\ 四川}{}{}
+\phone[mobile]{13648041953}
+\email{zixie1991@gmail.com}
+\homepage{github.com/zixie1991}
+\quote{求职意向: 软件开发}
+
+\renewcommand*{\namefont}{\fontsize{34}{36}\mdseries\upshape\heiti}
+\renewcommand*{\titlefont}{\large\mdseries\slshape\heiti}
+\renewcommand*{\addressfont}{\small\mdseries\slshape\heiti}
+\renewcommand*{\sectionfont}{\large\mdseries\upshape\heiti}
+\renewcommand*{\subsectionfont}{\large\mdseries\upshape\heiti}
+
+\newcommand*{\cvdef}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{: {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    .\strut%
+    \ifx&#7&%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{教育背景}
+\cventry{2014.9--至今}{研究生}{电子科技大学}{计算机系统结构}{\textit{}}{Description}  % arguments 3 to 6 can be left empty
+\cventry{2010.9--2014.7}{本科}{电子科技大学}{计算机科学与技术}{\textit{}}{Description}
+
+\section{专业技能}
+\cvline{}{熟练掌握C++, 熟悉STL的使用和基本原理}
+\cvline{}{熟悉常见的算法和数据结构}
+\cvline{}{熟悉Web开发}
+\cvline{}{熟悉Linux操作系统、开发环境、常用工具(如gdb、tcpdump、valgrind等)和编程接口}
+\cvline{}{熟练掌握Linux网络编程技术，如多进程、多线程、epoll事件驱动等}
+
+
+\section{项目经历}
+\cventry{2016.5--至今}{大规模人脸识别系统}{}{公安警备实验室项目}{}{Description}
+\cventry{2015.12--2016.5}{人脸识别库的开发}{}{公安警备实验室项目}{}{Description}
+\cventry{2015.12--2016.3}{电影聚合网站}{}{个人兴趣项目}{}{Description}
+
+\section{个人评价}
+\cvitem{}{工作态度认真，做事踏实，有很强的责任心和团队意识}
+\cvitem{}{喜欢编码，有写开发日志的习惯}
+\cvitem{}{关注网页抓取和解析、搜索引擎、图像搜索、推荐系统等相关技术}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
