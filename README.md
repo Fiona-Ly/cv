@@ -39,6 +39,26 @@ cd .. && sudo fc-cache
 fc-list :lang=zh 
 ```
 
+配置texlive Winndows字体: 向/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-xecjk-winfonts.def添加如下内容
+
+```
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}
+  {SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong_GB2312}
+ 
+\setCJKfamilyfont{zhsong}{SimSun}
+\setCJKfamilyfont{zhhei}{SimHei}
+\setCJKfamilyfont{zhkai}{KaiTi_GB2312}
+\setCJKfamilyfont{zhfs}{FangSong_GB2312}
+ 
+ 
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+```
+
 *   [如何在linux下配置完整的latex中文支持](http://asc.2dark.org/node/129)
 *   [Ubuntu下部署Latex编译环境](http://ptbsare.org/2014/05/12/ubuntu%E4%B8%8B%E9%83%A8%E7%BD%B2latex%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/)
 *   [LaTeX中文排版（使用XeTeX）](http://linux-wiki.cn/wiki/zh-hans/LaTeX%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%EF%BC%88%E4%BD%BF%E7%94%A8XeTeX%EF%BC%89)
