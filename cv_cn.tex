@@ -35,6 +35,10 @@
 \setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+% 在其他左侧插入标志
+\usepackage{manfnt}
+\newcommand{\hello}{{\tiny\textdbend}}
+
 % 设置超链接字体颜色
 \AtBeginDocument{
     \hypersetup{colorlinks,urlcolor=blue}
@@ -42,8 +46,8 @@
 
 % personal data
 \name{张}{杰}
-\title{个人简历}
-\address{成都\ 四川}{}{}
+\title{硕士/男}
+\address{四川\ 成都}{}{}
 \phone[mobile]{13648041953}
 \email{zixie1991@gmail.com}
 \homepage{github.com/zixie1991}
@@ -82,26 +86,32 @@
 \makecvtitle
 
 \section{教育背景}
-\cventry{2014.9--至今}{研究生}{电子科技大学}{计算机系统结构}{\textit{}}{Description}  % arguments 3 to 6 can be left empty
-\cventry{2010.9--2014.7}{本科}{电子科技大学}{计算机科学与技术}{\textit{}}{Description}
+\cventry{2014.9--至今}{硕士}{电子科技大学}{计算机系统结构}{保研}{}  % arguments 3 to 6 can be left empty
+\cventry{2010.9--2014.7}{学士}{电子科技大学}{计算机科学与技术(英才实验学院)}{}{}
 
 \section{专业技能}
-\cvline{}{熟练掌握C++, 熟悉STL的使用和基本原理}
-\cvline{}{熟悉常见的算法和数据结构}
-\cvline{}{熟悉Web开发}
-\cvline{}{熟悉Linux操作系统、开发环境、常用工具(如gdb、tcpdump、valgrind等)和编程接口}
-\cvline{}{熟练掌握Linux网络编程技术，如多进程、多线程、epoll事件驱动等}
-
+\cvline{\hello}{熟练掌握C++, 熟悉Python/Shell等脚本语言}
+\cvline{\hello}{熟悉常见的算法和数据结构}
+\cvline{\hello}{了解常见机器学习算法、深度学习模型, 熟练使用libsvm, OpenCV, Caffe, scikit-learn等工具}
+\cvline{\hello}{熟悉Linux开发环境，掌握Linux下常用命令及开发调试方法，熟悉Git等版本控制工具}
+\cvline{\hello}{熟练掌握Linux网络编程技术，如多线程、epoll事件驱动等网络模型}
+\cvline{\hello}{熟悉网页爬取和解析等相关技术}
+\cvline{\hello}{熟悉Web开发}
 
 \section{项目经历}
 \cventry{2016.5--至今}{大规模人脸识别系统}{}{公安警备实验室项目}{}{Description}
-\cventry{2015.12--2016.5}{人脸识别库的开发}{}{公安警备实验室项目}{}{Description}
+\cventry{2015.12--2016.5}{人脸识别库的开发}{}{公安警备实验室项目}{}{Description
+\begin{itemize}
+    \item 负责公司SDK产品的开发与维护，并针对特定行业场景和客户项目进行系统开发设计，用户接口设计和维护 
+    \item 负责研究代码工程化，模块算法编写，逻辑实现和单元测试，并编写相关技术文档 
+    \item 学习和研究新技术以满足产品的需求，并对现有技术提出改进建议
+\end{itemize}}
 \cventry{2015.12--2016.3}{电影聚合网站}{}{个人兴趣项目}{}{Description}
 
 \section{个人评价}
-\cvitem{}{工作态度认真，做事踏实，有很强的责任心和团队意识}
-\cvitem{}{喜欢编码，有写开发日志的习惯}
-\cvitem{}{关注网页抓取和解析、搜索引擎、图像搜索、推荐系统等相关技术}
+\cvline{\hello}{工作态度认真，做事踏实，有很强的责任心和团队意识}
+\cvline{\hello}{喜欢编码，有写开发日志的习惯}
+\cvline{\hello}{关注网页抓取和解析、搜索引擎、图像搜索、推荐系统等相关技术}
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
